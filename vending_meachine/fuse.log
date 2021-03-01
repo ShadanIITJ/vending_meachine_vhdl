@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/Desktop/CODE/vending_meachine/test_benach_isim_beh.exe -prj /home/ise/Desktop/CODE/vending_meachine/test_benach_beh.prj work.test_benach 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ise/Desktop/CODE/vending_meachine/vending_meachine.vhd" into library work
+Parsing VHDL file "/home/ise/Desktop/CODE/vending_meachine/test_benach.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 96828 KB
+Fuse CPU Usage: 510 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arc1 of entity vending_meachine [vending_meachine_default]
+Compiling architecture behavior of entity test_benach
+Time Resolution for simulation is 1ps.
+Compiled 6 VHDL Units
+Built simulation executable /home/ise/Desktop/CODE/vending_meachine/test_benach_isim_beh.exe
+Fuse Memory Usage: 111544 KB
+Fuse CPU Usage: 590 ms
+GCC CPU Usage: 170 ms

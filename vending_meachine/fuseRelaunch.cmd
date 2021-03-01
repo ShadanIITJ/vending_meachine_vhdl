@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Desktop/CODE/vending_meachine/test_benach_isim_beh.exe" -prj "/home/ise/Desktop/CODE/vending_meachine/test_benach_beh.prj" "work.test_benach" 

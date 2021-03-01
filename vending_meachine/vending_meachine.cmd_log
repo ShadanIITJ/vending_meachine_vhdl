@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/ise/Desktop/CODE/vending_meachine/vending_meachine.xst" -ofn "/home/ise/Desktop/CODE/vending_meachine/vending_meachine.syr" 

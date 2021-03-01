@@ -1,0 +1,491 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: vending_meachine.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vending_meachine.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vending_meachine"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : vending_meachine
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/ise/Desktop/CODE/vending_meachine/vending_meachine.vhd" into library work
+Parsing entity <vending_meachine>.
+Parsing architecture <arc1> of entity <vending_meachine>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <vending_meachine> (architecture <arc1>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <vending_meachine>.
+    Related source file is "/home/ise/Desktop/CODE/vending_meachine/vending_meachine.vhd".
+    Found 3-bit register for signal <selected>.
+    Found 3-bit register for signal <state>.
+    Found 32-bit register for signal <collected>.
+    Found 8-bit register for signal <out_money_amount>.
+    Found 3-bit register for signal <output_stuff>.
+    Found 32-bit register for signal <to_collect>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 001                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <collected[31]_GND_4_o_add_11_OUT> created at line 110.
+    Found 32-bit adder for signal <collected[31]_GND_4_o_add_13_OUT> created at line 114.
+    Found 32-bit adder for signal <collected[31]_GND_4_o_add_15_OUT> created at line 118.
+    Found 8-bit subtractor for signal <collected[31]_to_collect[31]_sub_18_OUT<7:0>> created at line 123.
+    Found 32-bit comparator greater for signal <n0016> created at line 122
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  78 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  33 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <vending_meachine> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 3
+ 8-bit subtractor                                      : 1
+# Registers                                            : 5
+ 3-bit register                                        : 2
+ 32-bit register                                       : 2
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 33
+ 3-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 19
+ 8-bit 2-to-1 multiplexer                              : 7
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 3
+ 8-bit subtractor                                      : 1
+# Registers                                            : 78
+ Flip-Flops                                            : 78
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 33
+ 3-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 19
+ 8-bit 2-to-1 multiplexer                              : 7
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 00
+ 010   | 01
+ 100   | 11
+-------------------
+WARNING:Xst:2677 - Node <to_collect_31> of sequential type is unconnected in block <vending_meachine>.
+
+Optimizing unit <vending_meachine> ...
+WARNING:Xst:1293 - FF/Latch <to_collect_30> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_29> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_28> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_27> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_26> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_25> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_24> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_23> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_22> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_21> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_20> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_19> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_18> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_17> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_16> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_15> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_14> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_13> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_12> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_11> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_10> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_9> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_8> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_7> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_6> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <to_collect_3> has a constant value of 0 in block <vending_meachine>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <to_collect_1> in Unit <vending_meachine> is equivalent to the following FF/Latch, which will be removed : <to_collect_5> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vending_meachine, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : vending_meachine.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 457
+#      GND                         : 1
+#      INV                         : 9
+#      LUT1                        : 87
+#      LUT2                        : 32
+#      LUT3                        : 3
+#      LUT4                        : 9
+#      LUT5                        : 20
+#      LUT6                        : 75
+#      MUXCY                       : 114
+#      MUXF7                       : 5
+#      VCC                         : 1
+#      XORCY                       : 101
+# FlipFlops/Latches                : 52
+#      FD                          : 17
+#      FDE                         : 32
+#      FDRE                        : 2
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 17
+#      IBUF                        : 6
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              52  out of  126800     0%  
+ Number of Slice LUTs:                  235  out of  63400     0%  
+    Number used as Logic:               235  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    237
+   Number with an unused Flip Flop:     185  out of    237    78%  
+   Number with an unused LUT:             2  out of    237     0%  
+   Number of fully used LUT-FF pairs:    50  out of    237    21%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          18
+ Number of bonded IOBs:                  18  out of    210     8%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 52    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.216ns (Maximum Frequency: 310.955MHz)
+   Minimum input arrival time before clock: 1.921ns
+   Maximum output required time after clock: 0.645ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.216ns (frequency: 310.955MHz)
+  Total number of paths / destination ports: 6485 / 87
+-------------------------------------------------------------------------
+Delay:               3.216ns (Levels of Logic = 33)
+  Source:            collected_2 (FF)
+  Destination:       collected_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: collected_2 to collected_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              7   0.361   0.307  collected_2 (collected_2)
+     INV:I->O              1   0.113   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_lut<2>_INV_0 (Madd_collected[31]_GND_4_o_add_15_OUT_lut<2>)
+     MUXCY:S->O            1   0.353   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<2> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<3> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<4> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<5> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<6> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<7> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<8> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<9> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<10> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<11> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<12> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<13> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<14> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<15> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<16> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<17> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<18> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<19> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<20> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<21> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<22> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<23> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<24> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<25> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<26> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<27> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<28> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<29> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<29>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_collected[31]_GND_4_o_add_15_OUT_cy<30> (Madd_collected[31]_GND_4_o_add_15_OUT_cy<30>)
+     XORCY:CI->O           4   0.370   0.309  Madd_collected[31]_GND_4_o_add_15_OUT_xor<31> (collected[31]_GND_4_o_add_15_OUT<31>)
+     LUT6:I5->O            1   0.097   0.556  Mmux_collected[31]_collected[31]_mux_25_OUT253_SW1 (N100)
+     LUT6:I2->O            1   0.097   0.000  Mmux_collected[31]_collected[31]_mux_25_OUT253 (collected[31]_collected[31]_mux_25_OUT<31>)
+     FDE:D                     0.008          collected_31
+    ----------------------------------------
+    Total                      3.216ns (2.043ns logic, 1.173ns route)
+                                       (63.5% logic, 36.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 297 / 55
+-------------------------------------------------------------------------
+Offset:              1.921ns (Levels of Logic = 4)
+  Source:            money_input<1> (PAD)
+  Destination:       collected_30 (FF)
+  Destination Clock: clk rising
+
+  Data Path: money_input<1> to collected_30
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            70   0.001   0.624  money_input_1_IBUF (money_input_1_IBUF)
+     LUT4:I1->O            1   0.097   0.000  Mmux_collected[31]_collected[31]_mux_25_OUT241_lut (Mmux_collected[31]_collected[31]_mux_25_OUT241_lut)
+     MUXCY:S->O            1   0.583   0.511  Mmux_collected[31]_collected[31]_mux_25_OUT241_cy (Mmux_collected[31]_collected[31]_mux_25_OUT24)
+     LUT6:I3->O            1   0.097   0.000  Mmux_collected[31]_collected[31]_mux_25_OUT243 (collected[31]_collected[31]_mux_25_OUT<30>)
+     FDE:D                     0.008          collected_30
+    ----------------------------------------
+    Total                      1.921ns (0.786ns logic, 1.135ns route)
+                                       (40.9% logic, 59.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            output_stuff_2 (FF)
+  Destination:       output_stuff<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: output_stuff_2 to output_stuff<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.361   0.283  output_stuff_2 (output_stuff_2)
+     OBUF:I->O                 0.000          output_stuff_2_OBUF (output_stuff<2>)
+    ----------------------------------------
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.216|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.32 secs
+ 
+--> 
+
+
+Total memory usage is 604544 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   27 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
